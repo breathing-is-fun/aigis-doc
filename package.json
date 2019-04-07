@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 9099 --no-progress",
-    "build": "ng build --no-progress --prod",
+    "build": "ng build --no-progress --prod --base-href /aigis-doc/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
