@@ -3,8 +3,8 @@
   "version": "0.0.0-NOT-USED",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 9099 --no-progress",
-    "build": "ng build --no-progress --prod --base-href /aigis-doc/",
+    "start": "cross-env NODE_ENV=dev ng serve --port 9099 --no-progress",
+    "build": "cross-env NODE_ENV=prod ng build --no-progress --prod --base-href /aigis-doc/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -40,6 +40,7 @@
     "angular-cli-ghpages": "^0.5.3",
     "codelyzer": "~4.5.0",
     "copy-webpack-plugin": "^5.0.2",
+    "cross-env": "^5.2.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.0",

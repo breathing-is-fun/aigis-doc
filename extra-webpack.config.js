@@ -1,5 +1,6 @@
 const WebpackBar = require('webpackbar');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const env = process.env.NODE_ENV;
 
 module.exports = {
   plugins: [
@@ -17,5 +18,5 @@ module.exports = {
   devServer: {
     quiet: true,
   },
-  stats: 'errors-only',
+  stats: env === 'prod' ? 'normal' : 'errors-only',
 };
