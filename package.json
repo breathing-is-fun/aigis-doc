@@ -10,7 +10,8 @@
     "e2e": "ng e2e",
     "prettier": "node ./scripts/prettier.js",
     "lint-staged": "lint-staged",
-    "pub": "npm run build & ngh"
+    "pub": "npm run build & ngh",
+    "deploy": "ngh"
   },
   "private": true,
   "dependencies": {
