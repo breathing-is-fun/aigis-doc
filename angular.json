@@ -23,7 +23,7 @@
             "scripts": [],
             "es5BrowserSupport": true,
             "customWebpackConfig": {
-              "path": "./extra-webpack.config.js"
+              "path": "./extra-webpack.config.ts"
             }
           },
           "configurations": {
