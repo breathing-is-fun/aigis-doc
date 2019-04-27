@@ -20,6 +20,7 @@ jobs:
       - run: sudo dpkg -i google-chrome.deb
       - run: sudo sed -i 's|HERE/chrome\"|HERE/chrome\" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome
       - run: rm google-chrome.deb
+      - ENV CHROME_BIN=/usr/bin/google-chrome
       - checkout
       - run: node -v
       - run: npm -v
