@@ -33,6 +33,13 @@ jobs:
       - checkout
       - *attach_workspace
       - run: npm run lint
+  test:
+    <<: *container_config
+    steps:
+      - checkout
+      - *attach_workspace
+      - run: npm run codecov
+      - run: bash <(curl -s https://codecov.io/bash) -t 7337b222-3c4c-449d-9503-86c9bee5d88a
 
 workflows:
   version: 2
@@ -43,5 +50,8 @@ workflows:
             branches:
               ignore: gh-pages
       - lint:
+          requires:
+            - setup
+      - test:
           requires:
             - setup
