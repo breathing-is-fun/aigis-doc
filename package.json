@@ -8,10 +8,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prettier": "node ./scripts/prettier.js",
+    "prettier": "node scripts/prettier",
     "lint-staged": "lint-staged",
     "pub": "npm run build & ngh",
-    "deploy": "ngh"
+    "deploy": "ngh",
+    "parse": "node scripts/md2json"
   },
   "private": true,
   "dependencies": {
@@ -43,6 +44,7 @@
     "codelyzer": "~4.5.0",
     "copy-webpack-plugin": "^5.0.2",
     "cross-env": "^5.2.0",
+    "fs-extra": "^7.0.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.1",
