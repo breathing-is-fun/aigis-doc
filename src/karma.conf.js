@@ -28,7 +28,7 @@ module.exports = function(config) {
     browsers: ['Chrome'],
     browserDisconnectTimeout: 10000,
     browserDisconnectTolerance: 3,
-    browserNoActivityTimeout: 60000,
+    browserNoActivityTimeout: 100000,
     customLaunchers: {
       ChromeHeadlessCI: {
         base: 'ChromeHeadless',
