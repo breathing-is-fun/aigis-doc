@@ -38,7 +38,6 @@ jobs:
     steps:
       - checkout
       - *attach_workspace
-      - run: npm run e2e -- --protractor-config=e2e/protractor-ci.conf.js
       - run: npm run codecov
       - run: bash <(curl -s https://codecov.io/bash) -t 7337b222-3c4c-449d-9503-86c9bee5d88a
 
