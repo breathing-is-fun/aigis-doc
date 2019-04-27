@@ -13,7 +13,7 @@
     "pub": "npm run build & ngh",
     "deploy": "ngh",
     "parse": "node scripts/md2json",
-    "codecov": "ng test --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessCI"
+    "codecov": "ng test --code-coverage --no-watch --no-progress --browsers=ChromeHeadlessNoSandbox"
   },
   "private": true,
   "dependencies": {
