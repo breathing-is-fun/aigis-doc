@@ -53,35 +53,39 @@ const getData = dataSource => {
       技觉后: [],
     },
   };
-  result.中文名 = getContentBetweenSplits('# 中文名', '# 日文名', dataSource);
-  result.日文名 = getContentBetweenSplits('# 日文名', '# 入手方式', dataSource);
+  result.中文名 = getContentBetweenSplits('## 中文名', '## 日文名', dataSource);
+  result.日文名 = getContentBetweenSplits(
+    '## 日文名',
+    '## 入手方式',
+    dataSource,
+  );
   result.入手方式 = getContentBetweenSplits(
-    '# 入手方式',
-    '# 被动技能',
+    '## 入手方式',
+    '## 被动技能',
     dataSource,
   );
   result.被动技能.觉醒前 = getContentBetweenSplits(
-    '## 觉醒前',
-    '## 觉醒后',
-    getContentBetweenSplits('# 被动技能', '# 主动技能', dataSource, true),
+    '### 觉醒前',
+    '### 觉醒后',
+    getContentBetweenSplits('## 被动技能', '## 主动技能', dataSource, true),
   );
   result.被动技能.觉醒后 = getContentBetweenSplits(
-    '## 觉醒后',
-    '# 主动技能',
-    getContentBetweenSplits('# 被动技能', '# 主动技能', dataSource, true),
+    '### 觉醒后',
+    '## 主动技能',
+    getContentBetweenSplits('## 被动技能', '## 主动技能', dataSource, true),
   );
   result.主动技能.觉醒前 = getContentBetweenSplits(
-    '## 觉醒前',
-    '## 觉醒后',
-    getContentBetweenSplits('# 主动技能', '---', dataSource, true),
+    '### 觉醒前',
+    '### 觉醒后',
+    getContentBetweenSplits('## 主动技能', '---', dataSource, true),
   );
   result.主动技能.觉醒后 = getContentBetweenSplits(
-    '## 觉醒后',
-    '## 技觉后',
-    getContentBetweenSplits('# 主动技能', '---', dataSource, true),
+    '### 觉醒后',
+    '### 技觉后',
+    getContentBetweenSplits('## 主动技能', '---', dataSource, true),
   );
   result.主动技能.技觉后 = getContentBetweenSplits(
-    '## 技觉后',
+    '### 技觉后',
     '---',
     dataSource,
   );
