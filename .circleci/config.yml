@@ -4,6 +4,8 @@ references:
   container_config: &container_config
     docker:
       - image: circleci/node:11.0.0
+        environment:
+          CHROME_BIN: '/usr/bin/google-chrome'
     working_directory: ~/aigis-doc
 
   attach_workspace: &attach_workspace
@@ -20,7 +22,6 @@ jobs:
       - run: sudo dpkg -i google-chrome.deb
       - run: sudo sed -i 's|HERE/chrome\"|HERE/chrome\" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome
       - run: rm google-chrome.deb
-      - run: export CHROME_BIN=chromium-browser
       - checkout
       - run: node -v
       - run: npm -v
