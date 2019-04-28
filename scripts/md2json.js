@@ -8,18 +8,14 @@ const string2Object = dataItem => {
 };
 
 const getContentBetweenSplits = (prefix, suffix, dataSource, flag) => {
-  if (!flag) {
-    return dataSource
-      .split(prefix)[1]
-      .split(suffix)[0]
-      .trim()
-      .split(/[\r\n]+/)
-      .map(item => item.trim());
-  }
-  return dataSource
+  const prefixString = dataSource
     .split(prefix)[1]
     .split(suffix)[0]
     .trim();
+  if (!flag) {
+    return prefixString.split(/[\r\n]+/).map(item => item.trim());
+  }
+  return prefixString;
 };
 
 // 获得开头 --- 中间的参数，用作过滤条件
