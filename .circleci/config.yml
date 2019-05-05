@@ -42,6 +42,17 @@ jobs:
       - *attach_workspace
       - run: npm run codecov
       - run: bash <(curl -s https://codecov.io/bash) -t 7337b222-3c4c-449d-9503-86c9bee5d88a
+  parse:
+    <<: *container_config
+    steps:
+      - checkout
+      - *attach_workspace
+      - run: npm run parse
+      - persist_to_workspace:
+          root: ~/aigis-doc
+          paths:
+            - src/assets/json
+      - run: ls src/assets/json
 
 workflows:
   version: 2
@@ -55,5 +66,8 @@ workflows:
           requires:
             - setup
       - test:
+          requires:
+            - setup
+      - parse:
           requires:
             - setup
