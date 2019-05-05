@@ -35,7 +35,7 @@ const getConfig = dataSource => {
 // 但业务还没稳定下来，所以用硬编码减少脑力消耗
 // todo(refactor): 递归消除硬编码
 const getData = dataSource => {
-  let result = {
+  const result = {
     中文名: [],
     日文名: [],
     入手方式: [],
@@ -95,14 +95,16 @@ glob('src/assets/markdown/*.md', (_, files) => {
     const lines = content.split(/[\r\n]+/);
     const config = getConfig(lines);
     const data = getData(content);
-    fs.outputJson(
+    fs.outputJSON(
       path.join(process.cwd(), `src/assets/json/${fileName}.json`),
-      JSON.stringify({ config, data }),
-      error => {
-        if (error) {
-          console.error(error);
-        }
-      },
-    );
+      { config, data },
+      { spaces: 2 },
+    )
+      .then(() => {
+        console.log(fileName + ' => completed');
+      })
+      .catch(err => {
+        console.error(err);
+      });
   });
 });
