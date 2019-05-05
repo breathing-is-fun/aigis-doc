@@ -42,7 +42,7 @@ jobs:
       - *attach_workspace
       - run: npm run codecov
       - run: bash <(curl -s https://codecov.io/bash) -t 7337b222-3c4c-449d-9503-86c9bee5d88a
-  check_parser:
+  parse:
     <<: *container_config
     steps:
       - checkout
@@ -67,7 +67,7 @@ workflows:
             - setup
       - test:
           requires:
-            - setup
-      - check_parser:
+            - parse
+      - parse:
           requires:
             - setup
