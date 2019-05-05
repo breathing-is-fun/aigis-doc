@@ -3,8 +3,8 @@
   "version": "0.0.0-NOT-USED",
   "scripts": {
     "ng": "ng",
-    "start": "cross-env NODE_ENV=dev ng serve --port 9099 --no-progress",
-    "build": "cross-env NODE_ENV=prod ng build --no-progress --prod --base-href /aigis-doc/",
+    "start": "cross-env NODE_ENV=dev npm run parse && ng serve --port 9099 --no-progress",
+    "build": "cross-env NODE_ENV=prod npm run parse && ng build --no-progress --prod --base-href /aigis-doc/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
