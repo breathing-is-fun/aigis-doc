@@ -7,14 +7,14 @@ export interface MetaDataConfigProps {
   id: string;
   category: string;
 }
-export type OriginMetaDataCommonProps = {
+export interface OriginMetaDataCommonProps {
   觉醒前: Array<string>;
   觉醒后: Array<string>;
-};
-export type MetaDataCommonProps = {
+}
+export interface MetaDataCommonProps {
   beforeAwaken: Array<string>;
   afterAwaken: Array<string>;
-};
+}
 export interface OriginMetaDataContentProps {
   中文名: Array<string>;
   日文名: Array<string>;
@@ -70,20 +70,20 @@ export class MetaDataService {
       },
     };
     const activeSkill = {
-      skillAwaken: data['主动技能']['技觉后'],
-      beforeAwaken: data['主动技能']['觉醒前'],
-      afterAwaken: data['主动技能']['觉醒后'],
+      skillAwaken: data.主动技能.技觉后,
+      beforeAwaken: data.主动技能.觉醒前,
+      afterAwaken: data.主动技能.觉醒后,
     };
     const passiveSkill = {
-      beforeAwaken: data['被动技能']['觉醒前'],
-      afterAwaken: data['被动技能']['觉醒后'],
+      beforeAwaken: data.被动技能.觉醒前,
+      afterAwaken: data.被动技能.觉醒后,
     };
     result.data = {
-      cnName: data['中文名'],
-      jpName: data['日文名'],
+      cnName: data.中文名,
+      jpName: data.日文名,
       activeSkill,
       passiveSkill,
-      obtainWay: data['入手方式'],
+      obtainWay: data.入手方式,
     };
     return result;
   }
