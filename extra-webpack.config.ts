@@ -1,8 +1,13 @@
 const WebpackBar = require('webpackbar');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const env = process.env.NODE_ENV;
+const rxPaths = require('rxjs/_esm5/path-mapping');
+const webpack = require('webpack');
 
 module.exports = {
+  resolve: {
+    alias: rxPaths(),
+  },
   plugins: [
     new WebpackBar({
       name: '少女祈祷中...  ',
@@ -14,6 +19,7 @@ module.exports = {
         to: '.circleci/config.yml',
       },
     ]),
+    new webpack.optimize.ModuleConcatenationPlugin(),
   ],
   devServer: {
     quiet: true,
