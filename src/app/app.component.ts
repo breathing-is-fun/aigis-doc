@@ -8,6 +8,7 @@ import { MetaDataService } from '../service/meta-data.service';
 })
 export class AppComponent implements OnInit {
   dataSource: any = {};
+  title: string = '';
 
   constructor(private metaDataService: MetaDataService) {}
 
