@@ -46,6 +46,7 @@
     "copy-webpack-plugin": "^5.0.2",
     "cross-env": "^5.2.0",
     "fs-extra": "^7.0.1",
+    "husky": "^2.2.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.1",
@@ -67,9 +68,8 @@
     "lint-staged"
   ],
   "lint-staged": {
-    "*.{ts}": [
+    "*.ts": [
       "npm run prettier",
-      "npm run lint",
       "git add"
     ]
   }
