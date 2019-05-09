@@ -68,9 +68,13 @@
     "lint-staged"
   ],
   "lint-staged": {
-    "*.ts": [
-      "npm run prettier",
-      "git add"
-    ]
+    "linters": {
+      "*.ts": [
+        "npm run prettier",
+        "ng lint aigis-doc --files",
+        "git add"
+      ]
+    },
+    "relative": true
   }
 }
