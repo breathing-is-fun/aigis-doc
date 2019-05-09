@@ -3,12 +3,13 @@ import { async, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import template from '../assets/json/template.json';
 import { AppComponent } from './app.component';
+import { RoleDetailComponent } from './role-detail/role-detail.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule, HttpClientModule],
-      declarations: [AppComponent],
+      declarations: [AppComponent, RoleDetailComponent],
     }).compileComponents();
   }));
 
