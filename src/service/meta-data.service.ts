@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -8,30 +8,30 @@ export interface MetaDataConfigProps {
   category: string;
 }
 export interface OriginMetaDataCommonProps {
-  觉醒前: Array<string>;
-  觉醒后: Array<string>;
+  觉醒前: string[];
+  觉醒后: string[];
 }
 export interface MetaDataCommonProps {
-  beforeAwaken: Array<string>;
-  afterAwaken: Array<string>;
+  beforeAwaken: string[];
+  afterAwaken: string[];
 }
 export interface OriginMetaDataContentProps {
-  中文名: Array<string>;
-  日文名: Array<string>;
+  中文名: string[];
+  日文名: string[];
   主动技能: {
-    技觉后: Array<string>;
+    技觉后: string[];
   } & OriginMetaDataCommonProps;
   被动技能: OriginMetaDataCommonProps;
-  入手方式: Array<string>;
+  入手方式: string[];
 }
 export interface MetaDataContentProps {
-  cnName: Array<string>;
-  jpName: Array<string>;
+  cnName: string[];
+  jpName: string[];
   activeSkill: {
-    skillAwaken: Array<string>;
+    skillAwaken: string[];
   } & MetaDataCommonProps;
   passiveSkill: MetaDataCommonProps;
-  obtainWay: Array<string>;
+  obtainWay: string[];
 }
 export interface OriginMetaDataProps {
   config: MetaDataConfigProps;
