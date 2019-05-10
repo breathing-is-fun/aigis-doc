@@ -57,6 +57,10 @@ todo
 
 ## 数据（被动已计入）
 
+<img src="../../favicon.ico" width="48px" height="48px" style="margin-right: 10px;" alt="觉醒前" data-before-awaken />
+<img src="../../favicon.ico" width="48px" height="48px" style="margin-right: 10px;" alt="觉醒后" data-after-awaken />
+<img src="../../favicon.ico" width="48px" height="48px" alt="二觉" data-twice-awaken />
+
 <table style="width: 100%; text-align: center;" border="1">
   <tr>
     <td rowspan="2">状态</td>
