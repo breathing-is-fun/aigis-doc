@@ -6,6 +6,7 @@ category: 0
 ## 中文名
 
 QB
+
 九尾
 
 ## 日文名
@@ -34,7 +35,7 @@ todo
 
 ### 觉醒后
 
-    妖狐覚醒： 最大 30 秒攻击力、防御、HP2 倍
+    妖狐覚醒： 最大 30 秒攻击力、防御、HP 2 倍
 
     初动 1 秒，再动 22 秒
 
@@ -51,6 +52,8 @@ todo
     七尾の解放（技觉后，第四次发动）：最大攻击、防御、HP 永续上升 3.3 倍。技能结束后当前血量减半，技能强化
 
     九尾の解放（技觉后，第五次发动）：最大攻击、防御、HP 永续上升 4 倍。技能结束后当前血量减半，该技能只能使用一次
+
+---
 
 ## 数据（被动已计入）
 
@@ -74,14 +77,14 @@ todo
   <tr>
     <td rowspan="2">未觉醒</td>
     <td>lv 1</td>
-    <td>785</td>
-    <td>214</td>
-    <td>141</td>
-    <td rowspan="2">10</td>
-    <td rowspan="2">2</td>
-    <td rowspan="2">15</td>
-    <td rowspan="2">12</td>
-    <td rowspan="2">
+    <td data-before-hp>785</td>
+    <td data-before-attack>214</td>
+    <td data-before-pd>141</td>
+    <td rowspan="2" data-before-mk>10</td>
+    <td rowspan="2" data-before-block>2</td>
+    <td rowspan="2" data-before-cost-upper-limit>15</td>
+    <td rowspan="2" data-before-cost-lower-limit>12</td>
+    <td rowspan="2" data-before-reward-point>
       攻 +111
       <br />
       防 +111
@@ -96,14 +99,14 @@ todo
   <tr>
     <td rowspan="2">已觉醒</td>
     <td>lv 1</td>
-    <td>1074</td>
-    <td>335</td>
-    <td>220</td>
-    <td rowspan="2">10</td>
-    <td rowspan="2">2</td>
-    <td rowspan="2">15</td>
-    <td rowspan="2">12</td>
-    <td rowspan="2">
+    <td data-after-hp>1074</td>
+    <td data-after-attack>335</td>
+    <td data-after-pd>220</td>
+    <td rowspan="2" data-after-mk>10</td>
+    <td rowspan="2" data-after-block>2</td>
+    <td rowspan="2" data-after-cost-upper-limit>15</td>
+    <td rowspan="2" data-after-cost-lower-limit>12</td>
+    <td rowspan="2" data-after-reward-point>
       攻 +111
       <br />
       防 +111
@@ -116,5 +119,3 @@ todo
     <td>406</td>
   </tr>
 </table>
-
----

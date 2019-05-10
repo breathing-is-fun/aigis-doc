@@ -13,7 +13,6 @@ export class RoleDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.metaDataService.get().subscribe(({ data }) => {
-      console.log(data);
       this.dataItem = data;
     });
   }
