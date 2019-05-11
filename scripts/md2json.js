@@ -34,7 +34,7 @@ const getConfig = dataSource => {
 // 本来应该写递归获得俩 # 之间的文字
 // 但业务还没稳定下来，所以用硬编码减少脑力消耗
 // todo(refactor): 递归消除硬编码
-const getData = dataSource => {
+const getSkillData = dataSource => {
   const result = {
     中文名: [],
     日文名: [],
@@ -88,16 +88,65 @@ const getData = dataSource => {
   return result;
 };
 
+// 获得人物头像地址
+const getAvatarUrl = tags => {
+  const pattern = /<img[^>]+src=['"]([^'"]+)['"]+/g;
+  let result = [];
+  let temp;
+  while ((temp = pattern.exec(tags))) {
+    result.push(temp[1]);
+  }
+  return {
+    未觉醒图片地址: result[0],
+    觉醒图片地址: result[1],
+    二觉图片地址: result[2],
+  };
+};
+
+const assignBoardItem = (key, item) => {
+  const result = {};
+
+  if (item.includes(key)) {
+    result[key] = item.split('>')[1].split('<')[0];
+  }
+  return result;
+};
+
+// 获得人物面板数据
+const getTableData = dataSource => {
+  let result = {};
+  let keys = [];
+
+  // 获得标识字符
+  for (let item of dataSource) {
+    if (item.includes('data-')) {
+      keys.push(item.split('data-')[1].split('>')[0]);
+    }
+  }
+  keys = Array.from(new Set(keys));
+
+  for (let item of dataSource) {
+    if (item.includes('<img')) {
+      result = getAvatarUrl(item);
+      continue;
+    }
+    for (let key of keys) {
+      result = { ...result, ...assignBoardItem(key, item) };
+    }
+  }
+  return result;
+};
+
 glob('src/assets/markdown/*.md', (_, files) => {
   files.forEach(filePath => {
     const fileName = path.basename(filePath, '.md');
     const content = fs.readFileSync(filePath, 'utf8');
-    const lines = content.split(/[\r\n]+/);
-    const config = getConfig(lines);
-    const data = getData(content);
+    const config = getConfig(content.split(/[\r\n]+/));
+    const skillData = getSkillData(content);
+    const boardData = getTableData(content.split(/[\r\n]+/));
     fs.outputJSON(
       path.join(process.cwd(), `src/assets/json/${fileName}.json`),
-      { config, data },
+      { config, skillData, boardData },
       { spaces: 2 },
     )
       .then(() => {
