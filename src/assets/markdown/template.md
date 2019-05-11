@@ -57,9 +57,9 @@ todo
 
 ## 数据（被动已计入）
 
-| <img src="../../favicon.ico" width="48px" height="48px" alt="觉醒前" data-before-awaken-img /> | <img src="../../favicon.ico" width="48px" height="48px" alt="觉醒后" data-after-awaken-img /> | <img src="../../favicon.ico" width="48px" height="48px" alt="二觉" data-twice-awaken-img /> |
-| ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| 觉醒前                                                                                         | 觉醒后                                                                                        | 二觉                                                                                        |
+| <img src="../../favicon.ico" width="48px" height="48px" alt="觉醒前" /> | <img src="../../favicon.ico" width="48px" height="48px" alt="觉醒后" /> | <img src="../../favicon.ico" width="48px" height="48px" alt="二觉" /> |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| 觉醒前                                                                  | 觉醒后                                                                  | 二觉                                                                  |
 
 <table style="width: 100%; text-align: center;" border="1">
   <tr>
@@ -71,55 +71,51 @@ todo
     <td rowspan="2">魔抗</td>
     <td rowspan="2">挡数</td>
     <td colspan="2">cost</td>
-    <td rowspan="2">好感加成</td>
+    <td colspan="2">好感加成</td>
   </tr>
   <tr>
     <td>上限</td>
     <td>初期</td>
     <td>下限</td>
+    <td>攻击</td>
+    <td>物防</td>
   </tr>
   <tr>
     <td rowspan="2">未觉醒</td>
     <td>lv 1</td>
-    <td data-before-hp>785</td>
-    <td data-before-attack>214</td>
-    <td data-before-pd>141</td>
-    <td rowspan="2" data-before-mk>10</td>
-    <td rowspan="2" data-before-block>2</td>
-    <td rowspan="2" data-before-cost-upper-limit>15</td>
-    <td rowspan="2" data-before-cost-lower-limit>12</td>
-    <td rowspan="2" data-before-reward-point>
-      攻 +111
-      <br />
-      防 +111
-    </td>
+    <td data-未觉醒一级hp>785</td>
+    <td data-未觉醒一级攻击>214</td>
+    <td data-未觉醒一级物防>141</td>
+    <td rowspan="2" data-未觉醒魔防>10</td>
+    <td rowspan="2" data-未觉醒挡数>2</td>
+    <td rowspan="2" data-未觉醒cost上限>15</td>
+    <td rowspan="2" data-未觉醒cost下限>12</td>
+    <td rowspan="2" data-未觉醒好感攻击加成>111</td>
+    <td rowspan="2" data-未觉醒好感物防加成>111</td>
   </tr>
   <tr>
     <td>lv 80</td>
-    <td>1170</td>
-    <td>379</td>
-    <td>249</td>
+    <td data-未觉醒满级hp>1170</td>
+    <td data-未觉醒满级攻击>379</td>
+    <td data-未觉醒满级物防>249</td>
   </tr>
   <tr>
     <td rowspan="2">已觉醒</td>
     <td>lv 1</td>
-    <td data-after-hp>1074</td>
-    <td data-after-attack>335</td>
-    <td data-after-pd>220</td>
-    <td rowspan="2" data-after-mk>10</td>
-    <td rowspan="2" data-after-block>2</td>
-    <td rowspan="2" data-after-cost-upper-limit>15</td>
-    <td rowspan="2" data-after-cost-lower-limit>12</td>
-    <td rowspan="2" data-after-reward-point>
-      攻 +111
-      <br />
-      防 +111
-    </td>
+    <td data-觉醒一级hp>1074</td>
+    <td data-觉醒一级攻击>335</td>
+    <td data-觉醒一级物防>220</td>
+    <td rowspan="2" data-觉醒魔防>10</td>
+    <td rowspan="2" data-觉醒挡数>2</td>
+    <td rowspan="2" data-觉醒cost上限>15</td>
+    <td rowspan="2" data-觉醒cost下限>12</td>
+    <td rowspan="2" data-觉醒好感攻击加成>111</td>
+    <td rowspan="2" data-觉醒好感物防加成>111</td>
   </tr>
   <tr>
     <td>lv 99</td>
-    <td>1820</td>
-    <td>531</td>
-    <td>406</td>
+    <td data-觉醒满级hp>1820</td>
+    <td data-觉醒满级攻击>531</td>
+    <td data-觉醒满级物防>406</td>
   </tr>
 </table>
