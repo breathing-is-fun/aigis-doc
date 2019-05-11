@@ -64,7 +64,8 @@ export interface OriginMetaBoardDataProps {
 }
 export interface OriginMetaDataProps {
   config: MetaDataConfigProps;
-  data: OriginMetaDataContentProps;
+  skillData: OriginMetaDataContentProps;
+  boardData: OriginMetaBoardDataProps;
 }
 export interface MetaBoardDataProps {
   beforeImgUrl: string;
@@ -97,7 +98,8 @@ export interface MetaBoardDataProps {
 }
 export interface MetaDataProps {
   config: MetaDataConfigProps;
-  data: MetaDataContentProps;
+  skillData: MetaDataContentProps;
+  boardData: MetaBoardDataProps;
 }
 
 @Injectable({
@@ -112,10 +114,10 @@ export class MetaDataService {
       .pipe(map(data => this.transform(data)));
   }
 
-  private transform({ config, data }): MetaDataProps {
+  private transform({ config, skillData, boardData }): MetaDataProps {
     const result = {
       config,
-      data: {
+      skillData: {
         cnName: [],
         jpName: [],
         activeSkill: {
@@ -126,23 +128,82 @@ export class MetaDataService {
         passiveSkill: { beforeAwaken: [], afterAwaken: [] },
         obtainWay: [],
       },
+      boardData: {
+        beforeImgUrl: '',
+        afterImgUrl: '',
+        twiceImgUrl: '',
+        beforeMinHp: '',
+        beforeMinAttack: '',
+        beforeMinPhysicalDefense: '',
+        beforeMaxHp: '',
+        beforeMaxAttack: '',
+        beforeMaxPhysicalDefense: '',
+        beforeMagicDefense: '',
+        beforeBlock: '',
+        beforeCostUpperLimit: '',
+        beforeCostLowerLimit: '',
+        beforeRewardAttack: '',
+        beforeRewardPhysicalDefense: '',
+        afterMinHp: '',
+        afterMinAttack: '',
+        afterMinPhysicalDefense: '',
+        afterMaxHp: '',
+        afterMaxAttack: '',
+        afterMaxPhysicalDefense: '',
+        afterMagicDefense: '',
+        afterBlock: '',
+        afterCostUpperLimit: '',
+        afterCostLowerLimit: '',
+        afterRewardAttack: '',
+        affterRewardPhysicalDefense: '',
+      },
     };
     const activeSkill = {
-      skillAwaken: data.主动技能.技觉后,
-      beforeAwaken: data.主动技能.觉醒前,
-      afterAwaken: data.主动技能.觉醒后,
+      skillAwaken: skillData.主动技能.技觉后,
+      beforeAwaken: skillData.主动技能.觉醒前,
+      afterAwaken: skillData.主动技能.觉醒后,
     };
     const passiveSkill = {
-      beforeAwaken: data.被动技能.觉醒前,
-      afterAwaken: data.被动技能.觉醒后,
+      beforeAwaken: skillData.被动技能.觉醒前,
+      afterAwaken: skillData.被动技能.觉醒后,
     };
-    result.data = {
-      cnName: data.中文名,
-      jpName: data.日文名,
+    result.skillData = {
+      cnName: skillData.中文名,
+      jpName: skillData.日文名,
       activeSkill,
       passiveSkill,
-      obtainWay: data.入手方式,
+      obtainWay: skillData.入手方式,
     };
+    result.boardData = {
+      beforeImgUrl: boardData.未觉醒图片地址,
+      afterImgUrl: boardData.觉醒图片地址,
+      twiceImgUrl: boardData.二觉图片地址,
+      beforeMinHp: boardData.未觉醒一级hp,
+      beforeMinAttack: boardData.未觉醒一级攻击,
+      beforeMinPhysicalDefense: boardData.未觉醒一级物防,
+      beforeMaxHp: boardData.未觉醒满级hp,
+      beforeMaxAttack: boardData.未觉醒满级攻击,
+      beforeMaxPhysicalDefense: boardData.未觉醒满级物防,
+      beforeMagicDefense: boardData.未觉醒魔防,
+      beforeBlock: boardData.未觉醒挡数,
+      beforeCostUpperLimit: boardData.未觉醒cost上限,
+      beforeCostLowerLimit: boardData.未觉醒cost下限,
+      beforeRewardAttack: boardData.未觉醒好感攻击加成,
+      beforeRewardPhysicalDefense: boardData.未觉醒好感物防加成,
+      afterMinHp: boardData.觉醒一级hp,
+      afterMinAttack: boardData.觉醒一级攻击,
+      afterMinPhysicalDefense: boardData.觉醒一级物防,
+      afterMaxHp: boardData.觉醒满级hp,
+      afterMaxAttack: boardData.觉醒满级攻击,
+      afterMaxPhysicalDefense: boardData.觉醒满级物防,
+      afterMagicDefense: boardData.觉醒魔防,
+      afterBlock: boardData.觉醒挡数,
+      afterCostUpperLimit: boardData.觉醒cost上限,
+      afterCostLowerLimit: boardData.觉醒cost下限,
+      afterRewardAttack: boardData.觉醒好感攻击加成,
+      affterRewardPhysicalDefense: boardData.觉醒好感物防加成,
+    };
+    console.log(result);
     return result;
   }
 }

@@ -7,13 +7,11 @@ import { MetaDataService } from 'src/service/meta-data.service';
   styleUrls: ['./role-detail.component.css'],
 })
 export class RoleDetailComponent implements OnInit {
-  dataItem = {};
+  dataItem = null;
 
   constructor(private metaDataService: MetaDataService) {}
 
   ngOnInit(): void {
-    this.metaDataService.get().subscribe(({ data }) => {
-      this.dataItem = data;
-    });
+    this.metaDataService.get().subscribe(({ skillData, boardData }) => {});
   }
 }
