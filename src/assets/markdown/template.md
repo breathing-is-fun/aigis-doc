@@ -59,7 +59,7 @@ todo
 
 | <img src="../../favicon.ico" width="48px" height="48px" alt="觉醒前" data-before-awaken-img /> | <img src="../../favicon.ico" width="48px" height="48px" alt="觉醒后" data-after-awaken-img /> | <img src="../../favicon.ico" width="48px" height="48px" alt="二觉" data-twice-awaken-img /> |
 | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-
+| 觉醒前                                                                                         | 觉醒后                                                                                        | 二觉                                                                                        |
 
 <table style="width: 100%; text-align: center;" border="1">
   <tr>
