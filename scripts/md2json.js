@@ -138,6 +138,7 @@ const getTableData = dataSource => {
 };
 
 glob('src/assets/markdown/*.md', (_, files) => {
+  // 生成数据文件
   files.forEach(filePath => {
     const fileName = path.basename(filePath, '.md');
     const content = fs.readFileSync(filePath, 'utf8');
@@ -156,4 +157,15 @@ glob('src/assets/markdown/*.md', (_, files) => {
         console.error(err);
       });
   });
+  // 生成索引文件
+  fs.outputJson(
+    path.join(process.cwd(), 'src/assets/json/mapping.json'),
+    files.map(item =>
+      item
+        .replace('src/', '')
+        .replace('markdown', 'json')
+        .replace('.md', '.json'),
+    ),
+    { spaces: 2 },
+  );
 });
