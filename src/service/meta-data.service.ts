@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export interface MetaDataConfigProps {
@@ -108,10 +108,18 @@ export interface MetaDataProps {
 export class MetaDataService {
   constructor(private http: HttpClient) {}
 
-  get(): Observable<any> {
-    return this.http
-      .get<OriginMetaDataProps>('../assets/json/template.json')
-      .pipe(map(data => this.transform(data)));
+  getMapping(): Observable<any> {
+    return this.http.get<string[]>('assets/json/mapping.json');
+  }
+
+  getData(mapping: string[]) {
+    const fork = [];
+    for (const url of mapping) {
+      fork.push(this.http.get(url));
+    }
+    return forkJoin(fork).pipe(
+      map((dataSource: any) => dataSource.map(item => this.transform(item))),
+    );
   }
 
   private transform({ config, skillData, boardData }): MetaDataProps {
@@ -203,7 +211,6 @@ export class MetaDataService {
       afterRewardAttack: boardData.觉醒好感攻击加成,
       affterRewardPhysicalDefense: boardData.觉醒好感物防加成,
     };
-    console.log(result);
     return result;
   }
 }

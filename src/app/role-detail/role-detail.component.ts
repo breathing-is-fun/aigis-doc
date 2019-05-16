@@ -12,6 +12,10 @@ export class RoleDetailComponent implements OnInit {
   constructor(private metaDataService: MetaDataService) {}
 
   ngOnInit(): void {
-    this.metaDataService.get().subscribe(({ skillData, boardData }) => {});
+    this.metaDataService.getMapping().subscribe(mapping => {
+      this.metaDataService
+        .getData(mapping)
+        .subscribe(data => console.log(data));
+    });
   }
 }
