@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MetaDataService } from 'src/service/meta-data.service';
 
 @Component({
@@ -7,15 +7,11 @@ import { MetaDataService } from 'src/service/meta-data.service';
   styleUrls: ['./role-detail.component.css'],
 })
 export class RoleDetailComponent implements OnInit {
-  dataItem = null;
+  @Input() dataItem;
 
   constructor(private metaDataService: MetaDataService) {}
 
   ngOnInit(): void {
-    this.metaDataService.getMapping().subscribe(mapping => {
-      this.metaDataService
-        .getData(mapping)
-        .subscribe(data => console.log(data));
-    });
+    console.log(this.dataItem);
   }
 }

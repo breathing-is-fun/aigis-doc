@@ -1,1 +1,3 @@
-<app-role-detail></app-role-detail>
+<ng-container *ngFor="let item of dataSource">
+  <app-role-detail [dataItem]="item"></app-role-detail>
+</ng-container>
