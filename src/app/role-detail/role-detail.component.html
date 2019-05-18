@@ -1,29 +1,67 @@
 <ng-container *ngIf="dataItem">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef>No.</th>
-      <td mat-cell *matCellDef="let element">{{ element.position }}</td>
-    </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef>Weight</th>
-      <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef>Symbol</th>
-      <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  <h3>中文名</h3>
+  <div *ngFor="let item of dataItem.skillData.cnName">{{ item }}</div>
+  <h3>日文名</h3>
+  <div *ngFor="let item of dataItem.skillData.jpName">{{ item }}</div>
+  <table
+    style="width: 100%; text-align: center; border-collapse: collapse;"
+    border="1"
+  >
+    <tr>
+      <td rowspan="2">状态</td>
+      <td>初期</td>
+      <td rowspan="2">HP</td>
+      <td rowspan="2">攻击</td>
+      <td rowspan="2">物防</td>
+      <td rowspan="2">魔抗</td>
+      <td rowspan="2">挡数</td>
+      <td colspan="2">cost</td>
+      <td colspan="2">好感加成</td>
+    </tr>
+    <tr>
+      <td>上限</td>
+      <td>初期</td>
+      <td>下限</td>
+      <td>攻击</td>
+      <td>物防</td>
+    </tr>
+    <tr>
+      <td rowspan="2">未觉醒</td>
+      <td>lv 1</td>
+      <td data-未觉醒一级hp>785</td>
+      <td data-未觉醒一级攻击>214</td>
+      <td data-未觉醒一级物防>141</td>
+      <td rowspan="2" data-未觉醒魔防>10</td>
+      <td rowspan="2" data-未觉醒挡数>2</td>
+      <td rowspan="2" data-未觉醒cost上限>15</td>
+      <td rowspan="2" data-未觉醒cost下限>12</td>
+      <td rowspan="2" data-未觉醒好感攻击加成>111</td>
+      <td rowspan="2" data-未觉醒好感物防加成>111</td>
+    </tr>
+    <tr>
+      <td>lv 80</td>
+      <td data-未觉醒满级hp>1170</td>
+      <td data-未觉醒满级攻击>379</td>
+      <td data-未觉醒满级物防>249</td>
+    </tr>
+    <tr>
+      <td rowspan="2">已觉醒</td>
+      <td>lv 1</td>
+      <td data-觉醒一级hp>1074</td>
+      <td data-觉醒一级攻击>335</td>
+      <td data-觉醒一级物防>220</td>
+      <td rowspan="2" data-觉醒魔防>10</td>
+      <td rowspan="2" data-觉醒挡数>2</td>
+      <td rowspan="2" data-觉醒cost上限>15</td>
+      <td rowspan="2" data-觉醒cost下限>12</td>
+      <td rowspan="2" data-觉醒好感攻击加成>111</td>
+      <td rowspan="2" data-觉醒好感物防加成>111</td>
+    </tr>
+    <tr>
+      <td>lv 99</td>
+      <td data-觉醒满级hp>1820</td>
+      <td data-觉醒满级攻击>531</td>
+      <td data-觉醒满级物防>406</td>
+    </tr>
   </table>
 </ng-container>
