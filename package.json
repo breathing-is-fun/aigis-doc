@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prettier": "node scripts/prettier",
+    "prettier": "prettier -c --write '**/*'",
     "lint-staged": "lint-staged",
     "pub": "npm run build & ngh",
     "deploy": "ngh",
@@ -72,7 +72,7 @@
   "lint-staged": {
     "linters": {
       "*.ts": [
-        "npm run prettier",
+        "prettier --write",
         "git add"
       ]
     },
