@@ -9,6 +9,27 @@ import { MetaDataService } from 'src/service/meta-data.service';
 export class RoleDetailComponent implements OnInit {
   @Input() dataItem;
 
+  listOfData = [
+    {
+      key: '1',
+      name: 'John Brown',
+      age: 32,
+      address: 'New York No. 1 Lake Park',
+    },
+    {
+      key: '2',
+      name: 'Jim Green',
+      age: 42,
+      address: 'London No. 1 Lake Park',
+    },
+    {
+      key: '3',
+      name: 'Joe Black',
+      age: 32,
+      address: 'Sidney No. 1 Lake Park',
+    },
+  ];
+
   constructor(private metaDataService: MetaDataService) {}
 
   ngOnInit(): void {

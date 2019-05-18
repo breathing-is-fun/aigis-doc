@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTableModule } from '@angular/material/table';
+import { zh_CN, NgZorroAntdModule, NZ_I18N } from 'ng-zorro-antd';
 
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
@@ -21,9 +21,9 @@ import { RoleDetailComponent } from './role-detail/role-detail.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTableModule,
+    NgZorroAntdModule,
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
