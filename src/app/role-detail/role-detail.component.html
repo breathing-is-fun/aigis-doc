@@ -3,70 +3,74 @@
   <div *ngFor="let item of dataItem.skillData.cnName">{{ item }}</div>
   <h3>日文名</h3>
   <div *ngFor="let item of dataItem.skillData.jpName">{{ item }}</div>
-  <nz-table nzTemplateMode>
-    <thead>
-      <tr>
-        <th rowspan="2">状态</th>
-        <th>初期</th>
-        <th rowspan="2">HP</th>
-        <th rowspan="2">攻击</th>
-        <th rowspan="2">物防</th>
-        <th rowspan="2">魔抗</th>
-        <th rowspan="2">挡数</th>
-        <th colspan="2">cost</th>
-        <th colspan="2">好感加成</th>
-      </tr>
-      <tr>
-        <th>上限</th>
-        <th>初期</th>
-        <th>下限</th>
-        <th>攻击</th>
-        <th>物防</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td rowspan="2">未觉醒</td>
-        <td>lv 1</td>
-        <td data-未觉醒一级hp>{{ dataItem.boardData.beforeMinHp }}</td>
-        <td data-未觉醒一级攻击>{{ dataItem.boardData.beforeMinAttack }}</td>
-        <td data-未觉醒一级物防>{{ dataItem.boardData.beforeMinPhysicalDefense }}</td>
-        <td rowspan="2" data-未觉醒魔防>{{ dataItem.boardData.beforeMagicDefense }}</td>
-        <td rowspan="2" data-未觉醒挡数>{{ dataItem.boardData.beforeBlock }}</td>
-        <td rowspan="2" data-未觉醒cost上限>{{ dataItem.boardData.beforeCostUpperLimit }}</td>
-        <td rowspan="2" data-未觉醒cost下限>{{ dataItem.boardData.beforeCostLowerLimit }}</td>
-        <td rowspan="2" data-未觉醒好感攻击加成>{{ dataItem.boardData.beforeRewardAttack }}</td>
-        <td rowspan="2" data-未觉醒好感物防加成>
-          {{ dataItem.boardData.beforeRewardPhysicalDefense }}
-        </td>
-      </tr>
-      <tr>
-        <td>lv 80</td>
-        <td data-未觉醒满级hp>{{ dataItem.boardData.beforeMaxHp }}</td>
-        <td data-未觉醒满级攻击>{{ dataItem.boardData.beforeMaxAttack }}</td>
-        <td data-未觉醒满级物防>{{ dataItem.boardData.beforeMaxPhysicalDefense }}</td>
-      </tr>
-      <tr>
-        <td rowspan="2">已觉醒</td>
-        <td>lv 1</td>
-        <td data-觉醒一级hp>{{ dataItem.boardData.afterMinHp }}</td>
-        <td data-觉醒一级攻击>{{ dataItem.boardData.afterMinAttack }}</td>
-        <td data-觉醒一级物防>{{ dataItem.boardData.afterMinPhysicalDefense }}</td>
-        <td rowspan="2" data-觉醒魔防>{{ dataItem.boardData.afterMagicDefense }}</td>
-        <td rowspan="2" data-觉醒挡数>{{ dataItem.boardData.afterBlock }}</td>
-        <td rowspan="2" data-觉醒cost上限>{{ dataItem.boardData.afterCostUpperLimit }}</td>
-        <td rowspan="2" data-觉醒cost下限>{{ dataItem.boardData.afterCostLowerLimit }}</td>
-        <td rowspan="2" data-觉醒好感攻击加成>{{ dataItem.boardData.afterRewardAttack }}</td>
-        <td rowspan="2" data-觉醒好感物防加成>
-          {{ dataItem.boardData.affterRewardPhysicalDefense }}
-        </td>
-      </tr>
-      <tr>
-        <td>lv 99</td>
-        <td data-觉醒满级hp>{{ dataItem.boardData.afterMaxHp }}</td>
-        <td data-觉醒满级攻击>{{ dataItem.boardData.afterMaxAttack }}</td>
-        <td data-觉醒满级物防>{{ dataItem.boardData.afterMaxPhysicalDefense }}</td>
-      </tr>
-    </tbody>
-  </nz-table>
+  <nz-collapse>
+    <nz-collapse-panel nzHeader="面板数据">
+      <nz-table nzTemplateMode>
+        <thead>
+          <tr>
+            <th rowspan="2">状态</th>
+            <th>初期</th>
+            <th rowspan="2">HP</th>
+            <th rowspan="2">攻击</th>
+            <th rowspan="2">物防</th>
+            <th rowspan="2">魔抗</th>
+            <th rowspan="2">挡数</th>
+            <th colspan="2">cost</th>
+            <th colspan="2">好感加成</th>
+          </tr>
+          <tr>
+            <th>上限</th>
+            <th>初期</th>
+            <th>下限</th>
+            <th>攻击</th>
+            <th>物防</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2">未觉醒</td>
+            <td>lv 1</td>
+            <td data-未觉醒一级hp>{{ dataItem.boardData.beforeMinHp }}</td>
+            <td data-未觉醒一级攻击>{{ dataItem.boardData.beforeMinAttack }}</td>
+            <td data-未觉醒一级物防>{{ dataItem.boardData.beforeMinPhysicalDefense }}</td>
+            <td rowspan="2" data-未觉醒魔防>{{ dataItem.boardData.beforeMagicDefense }}</td>
+            <td rowspan="2" data-未觉醒挡数>{{ dataItem.boardData.beforeBlock }}</td>
+            <td rowspan="2" data-未觉醒cost上限>{{ dataItem.boardData.beforeCostUpperLimit }}</td>
+            <td rowspan="2" data-未觉醒cost下限>{{ dataItem.boardData.beforeCostLowerLimit }}</td>
+            <td rowspan="2" data-未觉醒好感攻击加成>{{ dataItem.boardData.beforeRewardAttack }}</td>
+            <td rowspan="2" data-未觉醒好感物防加成>
+              {{ dataItem.boardData.beforeRewardPhysicalDefense }}
+            </td>
+          </tr>
+          <tr>
+            <td>lv 80</td>
+            <td data-未觉醒满级hp>{{ dataItem.boardData.beforeMaxHp }}</td>
+            <td data-未觉醒满级攻击>{{ dataItem.boardData.beforeMaxAttack }}</td>
+            <td data-未觉醒满级物防>{{ dataItem.boardData.beforeMaxPhysicalDefense }}</td>
+          </tr>
+          <tr>
+            <td rowspan="2">已觉醒</td>
+            <td>lv 1</td>
+            <td data-觉醒一级hp>{{ dataItem.boardData.afterMinHp }}</td>
+            <td data-觉醒一级攻击>{{ dataItem.boardData.afterMinAttack }}</td>
+            <td data-觉醒一级物防>{{ dataItem.boardData.afterMinPhysicalDefense }}</td>
+            <td rowspan="2" data-觉醒魔防>{{ dataItem.boardData.afterMagicDefense }}</td>
+            <td rowspan="2" data-觉醒挡数>{{ dataItem.boardData.afterBlock }}</td>
+            <td rowspan="2" data-觉醒cost上限>{{ dataItem.boardData.afterCostUpperLimit }}</td>
+            <td rowspan="2" data-觉醒cost下限>{{ dataItem.boardData.afterCostLowerLimit }}</td>
+            <td rowspan="2" data-觉醒好感攻击加成>{{ dataItem.boardData.afterRewardAttack }}</td>
+            <td rowspan="2" data-觉醒好感物防加成>
+              {{ dataItem.boardData.affterRewardPhysicalDefense }}
+            </td>
+          </tr>
+          <tr>
+            <td>lv 99</td>
+            <td data-觉醒满级hp>{{ dataItem.boardData.afterMaxHp }}</td>
+            <td data-觉醒满级攻击>{{ dataItem.boardData.afterMaxAttack }}</td>
+            <td data-觉醒满级物防>{{ dataItem.boardData.afterMaxPhysicalDefense }}</td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </nz-collapse-panel>
+  </nz-collapse>
 </ng-container>
