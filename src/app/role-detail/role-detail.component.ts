@@ -9,8 +9,6 @@ import { MetaDataService } from 'src/service/meta-data.service';
 export class RoleDetailComponent implements OnInit {
   @Input() dataItem;
 
-  constructor(private metaDataService: MetaDataService) {}
-
   ngOnInit(): void {
     console.log(this.dataItem);
   }
